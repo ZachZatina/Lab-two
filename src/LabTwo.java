@@ -21,10 +21,11 @@ public class LabTwo {
 		
 		while (userChar == 'y') {
 			System.out.print("Hello, " + userName + ", please enter a number between 1 and 100: ");
+			while (!scnr.hasNextInt()) scnr.next();
 			input = scnr.nextInt();
 			
 			if (input < 1 || input > 100) {
-				System.out.println("This is not a valid number, try again");
+				System.out.println("This is not a valid number, try again.");
 			}
 			else {
 				if (input % 2 == 0) {
