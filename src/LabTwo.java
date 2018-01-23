@@ -14,9 +14,13 @@ public class LabTwo {
 		Scanner scnr = new Scanner(System.in);
 		int input;
 		char userChar = 'y';
+		String userName;
+		
+		System.out.print("Hello! What is your name?: ");
+		userName = scnr.nextLine();
 		
 		while (userChar == 'y') {
-			System.out.print("Enter a number between 1 and 100: ");
+			System.out.print("Hello, " + userName + ", please enter a number between 1 and 100: ");
 			input = scnr.nextInt();
 			
 			if (input < 1 || input > 100) {
@@ -25,29 +29,30 @@ public class LabTwo {
 			else {
 				if (input % 2 == 0) {
 					if(input < 25) {
-						System.out.println("Even and less than 25.");
+						System.out.println(userName + " your number is even and less than 25.");
 					}
 					else if (input >= 26 && input <= 60) {
-						System.out.println("Even");
+						System.out.println(userName + " your number is even");
 					}
 					else {
-						System.out.println(input + " Even.");
+						System.out.println(userName + ", your number of " + input + " is even.");
 					}
 				}
 				else {
 					if(input > 60) {
-						System.out.println(input + " and Odd and over 60");
+						System.out.println(userName + ", your number of " + input + " is odd and over 60");
 					}
 					else {
-						System.out.println(input + " is Odd");
+						System.out.println(userName + ", your number of " + input + " is Odd");
 					}
 				}
 			}
 			
-			System.out.print("Would you like to continue? (y/n): ");
+			System.out.print("Would you like to continue " + userName + "? (y/n): ");
 			userChar = scnr.next().charAt(0);
 			System.out.println("");
 		}
+		System.out.println("Thank you for using this application, " + userName + ". Goodbye!");
 		scnr.close();
 	}
 
